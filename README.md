@@ -84,7 +84,8 @@ Joined the Windows 10 client workstation to the Active Directory domain.
 <img width="500" height="450" alt="image" src="https://github.com/user-attachments/assets/e7fd7ae4-5362-49a1-85af-21652599c9b4" />
 
 ### Verifying Domain Join Through ADUC
-<img width="475" height="545" alt="image" src="https://github.com/user-attachments/assets/6366ed5a-e399-45b3-9a28-731523c29847" />
+<img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/49648d9b-bf10-4c36-ae52-47a3fb7a5409" />
+
 
 
 ## Active Directory Administration
