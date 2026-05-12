@@ -13,3 +13,11 @@ This project documents the setup of a Windows Server 2019 Active Directory lab i
 - Internal Network: 172.16.0.0/24
 - Domain Controller IP: 172.16.0.1
 - DHCP Scope: 172.16.0.100–172.16.0.200
+
+## Infrastructure Setup
+# Server 2019 adapter setup:
+Internet (NAT):
+<img width="975" height="446" alt="image" src="https://github.com/user-attachments/assets/62ed928a-70a6-47bb-8cda-8591688c5d24" />
+Internal:
+<img width="975" height="467" alt="image" src="https://github.com/user-attachments/assets/70f22a4c-2c40-496e-9a25-813e28c8d6c6" />
+
