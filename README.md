@@ -107,7 +107,15 @@ Used PowerShell automation to bulk-create domain users and improve administrativ
 ### PowerShell User Creation Script
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/6acd4a98-85d0-4e95-9e82-01ad48467da8" />
 
-## The following PowerShell script was used to automate bulk Active Directory user creation and provisioning:
+#### The following PowerShell script was used to automate bulk Active Directory user creation and provisioning:
+```powershell
+Import-Module ActiveDirectory
+
+$users = @(
+    "John.Smith",
+    "Sarah.Jones"
+)
+```
 [bulk-user-creation.ps1](scripts/bulk-user-creation.ps1)
 
 
