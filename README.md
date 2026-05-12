@@ -56,6 +56,7 @@ Double checking client join through AD UC Computers:
 Created department-based OUs and used PowerShell to automate the creation of 10 domain users.
 <img width="927" height="639" alt="image" src="https://github.com/user-attachments/assets/6acd4a98-85d0-4e95-9e82-01ad48467da8" />
 
+
 Confirming user creation:
 <img width="716" height="586" alt="image" src="https://github.com/user-attachments/assets/92f75aec-052d-4f77-89fb-5b4833c25313" />\
 
