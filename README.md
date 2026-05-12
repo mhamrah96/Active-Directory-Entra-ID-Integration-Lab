@@ -4,6 +4,10 @@ This project documents the setup of a Windows Server 2019 Active Directory lab i
 ## Network Topology
 <img width="676" height="530" alt="Active Directory Topology" src="https://github.com/user-attachments/assets/d0c41d97-ce43-4431-a5ef-1276e00b4dd8" />
 
+## Architecture Overview
+
+The environment consists of a Windows Server 2019 Domain Controller configured with Active Directory Domain Services (AD DS), DNS, DHCP, and RRAS/NAT. A Windows 10 client machine was domain joined through an internal 172.16.0.0/24 VirtualBox network and configured to receive addressing dynamically from the DHCP scope.
+
 ## Project Objectives
 
 - Deploy a Windows Server 2019 Active Directory environment
