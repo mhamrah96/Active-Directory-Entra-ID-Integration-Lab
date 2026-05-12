@@ -34,148 +34,225 @@ The environment consists of a Windows Server 2019 Domain Controller configured w
 
 ## Infrastructure Setup
 
-### Server 2019 adapter setup:
+### Server Network Configuration
 
-### Internet (NAT):
+Two network adapters were configured on the Windows Server 2019 virtual machine:
+- NAT adapter for internet connectivity
+- Internal adapter for domain communication between the server and client systems
+
+#### Internet Adapter (NAT)
 <img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/62ed928a-70a6-47bb-8cda-8591688c5d24" />
 
-### Internal:
+#### Internal Adapter
 <img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/70f22a4c-2c40-496e-9a25-813e28c8d6c6" />
 
-### Static Internal IP Configuration:
+### Static Internal IP Configuration
+A static internal IP address was configured on the Domain Controller to ensure reliable DNS and DHCP functionality throughout the environment.
+
 <img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/718eff9d-e2f5-4365-9017-34650d533bda" />
 
-### AD Domain Service Installation:
+### Active Directory Domain Services (AD DS)
+Installed the Active Directory Domain Services role using Server Manager and promoted the server to a Domain Controller for the domain:
+
+#### AD DS Installation
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/fb4d2ce3-b8f2-419b-8452-9a70931a8c30" />
 
-### Promoting the Server to DC:
+#### Promoting the Server to Domain Controller
 <img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/f575380d-55f7-459b-a3b8-3f16f157170c" />
 
-## DHCP Setup & Domain Join:
-### Scope:
+### DHCP Configuration
+Configured DHCP services to dynamically assign IP addresses to domain clients on the internal 172.16.0.0/24 network.
+
+#### DHCP Scope Configuration
 <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/6e6fa761-9854-413f-8a1a-360ed7b6e892" />
 
-### Confirming client is receiving a DHCP from our scope:
+#### Verifying DHCP Address Assignment
 <img width="550" height="400" alt="image" src="https://github.com/user-attachments/assets/fdeb985c-415f-488d-a83f-74f1364b5aaf" />
 
-### Client's computer shown in our address leases:
+#### DHCP Address Lease Verification
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/f6e09f8b-848e-4b0c-bb35-d018d3a4067d" />
 
-### Domain Join:
+### RRAS / NAT Configuration
+Configured RRAS (Routing and Remote Access Services) with NAT to allow internal domain clients to access the internet through the Domain Controller.
+
+<img width="500" height="425" alt="image" src="https://github.com/user-attachments/assets/0ec6c6d6-0283-4a08-8a09-2655b3a9b4a2" />
+
+
+### Domain Join
+Joined the Windows 10 client workstation to the Active Directory domain.
+
 <img width="500" height="450" alt="image" src="https://github.com/user-attachments/assets/e7fd7ae4-5362-49a1-85af-21652599c9b4" />
 
-### Double checking client join through AD UC Computers:
+### Verifying Domain Join Through ADUC
 <img width="475" height="545" alt="image" src="https://github.com/user-attachments/assets/6366ed5a-e399-45b3-9a28-731523c29847" />
 
 
 ## Active Directory Administration
 
-### Created four Organizational Units (IT, Marketing, Management, Finance):
+### Organizational Units (OUs)
+Created department-based Organizational Units to organize users and apply policies based on departmental roles.
+
+Departments created:
+
+IT
+Marketing
+Management
+Finance
+
 <img width="200" height="300" alt="image" src="https://github.com/user-attachments/assets/3ceee93d-2caf-4b26-97c1-84efb4a32e96" />
 
-## Powershell user creation automation:
-### Created department-based OUs and used PowerShell to automate the creation of 10 domain users.
+### PowerShell User Provisioning
+Used PowerShell automation to bulk-create domain users and improve administrative efficiency.
+
+### PowerShell User Creation Script
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/6acd4a98-85d0-4e95-9e82-01ad48467da8" />
 
-
-### Confirming user creation:
+### Verifying User Creation in ADUC
 <img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/92f75aec-052d-4f77-89fb-5b4833c25313" />\
 
 
-## Delegation + RDP
-### Delegated a user and gave reset password premissions:
+## Delegated Administration & Remote Desktop
+### Delegation of Control
+Delegated password reset permissions to a designated IT user account within the IT Organizational Unit.
+
 <img width="500" height="450" alt="image" src="https://github.com/user-attachments/assets/c46c42e0-9b11-4310-b726-061b82e80c62" />
 
-### Enable "Allow remote connections to this computer" through System Properties -> Remote:
+### Remote Desktop Configuration
+Enabled Remote Desktop access on the server and created an RDP-specific security group to control remote administrative access.
+
+#### Enabling Remote Desktop
 <img width="375" height="420" alt="image" src="https://github.com/user-attachments/assets/6fb792b0-12af-46ee-bd69-945f2536bd77" />
 
-### Create a security group insisde the IT department OU and name it "RDP_Users", added Mike Brown, the delegated user, into the Security Group:
+#### RDP Security Group Configuration
 <img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/a7a4fe7a-c88a-4fd8-a9e0-609925205eee" />
 
-### Used this command to enable remote desktop access for RDP_Users:
+#### RDP Access Configuration Command
 <img width="800" height="100" alt="image" src="https://github.com/user-attachments/assets/d65b5baf-e5fe-4e5d-aad8-7f03e9863f8e" />
 
-### Logging into RDP with Mike Brown's Credentials:
+#### Logging into the Server via RDP
 <img width="375" height="425" alt="image" src="https://github.com/user-attachments/assets/249952f7-f14d-46e9-9726-00ba64bc7ea2" />
 
-### Run Powershell inside the RDP, and run this command to check if Mike has the delegated premissions to reset a password:
+### Password Reset Verification
+Verified delegated administrative permissions by resetting a user password through PowerShell while logged into the delegated account.
+
+#### PowerShell Password Reset
 <img width="600" height="250" alt="image" src="https://github.com/user-attachments/assets/7e61d480-4a92-4df1-855e-9bbe85f12a53" />
 
-### Log into Emily's account via windows 10 client to check password reset:
+#### Successful Login After Password Reset
 <img width="550" height="350" alt="image" src="https://github.com/user-attachments/assets/494efd7b-4db2-48bd-a0cd-daf8460fa915" />
 
-## Group Policy
-### Creating the Control Panel Policy to deny access to control panel except the IT department:
+### Group Policy
+#### Control Panel Restriction Policy
+Configured a Group Policy Object to restrict Control Panel access for users in the Marketing, Management, and Finance Organizational Units while allowing access for the IT department.
+
+#### GPO Configuration
 <img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/b3eb23ed-90f0-43ac-bf84-bac4c495ee67" />
 <img width="650" height="400" alt="image" src="https://github.com/user-attachments/assets/b64f98b0-eb42-46f4-9990-9aa4f3e52605" />
 
-### Added the GPO to the following Organizational Units:
+#### Linked Organizational Units
 <img width="650" height="275" alt="image" src="https://github.com/user-attachments/assets/bde5a13b-ce11-4bd9-9e34-d6a8c97ffd84" />
 
-### Checked if control panel was accessible with an account inside the Marketing OU:
+#### Verifying Policy Enforcement
 <img width="650" height="400" alt="image" src="https://github.com/user-attachments/assets/a5638887-345d-4d6b-9666-0af5a5869738" />
 
-## Password Policy and Lockout
-### Updated Password Policy:
+### Password Policy & Lockout
+#### Password Complexity Policy
+Configured domain-wide password policies through Group Policy Management to enforce stronger authentication controls.
+
+#### Password Policy Configuration
 <img width="600" height="275" alt="image" src="https://github.com/user-attachments/assets/fa872477-4d93-4bf7-a01a-d610e3c39cb3" />
 <img width="600" height="200" alt="image" src="https://github.com/user-attachments/assets/49b35c68-8649-4ece-8b4d-383073f316e9" />
 
-### We will update our group policy with the following command:
+#### Updating Group Policy
 <img width="450" height="100" alt="image" src="https://github.com/user-attachments/assets/4215d280-1a1e-4cfa-830f-a52bd0c0c67a" />
 
-### When I tried resetting a password with generic letters, I got this error:
+#### Password Complexity Enforcement
 <img width="450" height="275" alt="image" src="https://github.com/user-attachments/assets/17d74423-f6ba-4880-be1c-6407ca11c80a" />
 
-### While testing Account Lockout Policy, account was disabled after three failed attempts, as expected:
+#### Account Lockout Policy
+Configured an account lockout threshold that disabled accounts after three failed login attempts.
+
+#### Account Lockout Verification
 <img width="450" height="450" alt="image" src="https://github.com/user-attachments/assets/e2cb03ec-9676-40a8-861a-0927cc577fd6" />
 
-### We can also see that the account shows as locked when trying to reset the password in AD UC:
+#### Locked Account Confirmation in ADUC
 <img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/bb181603-a470-4800-ad3f-c6d22af8ef02" />
 
-## Shared Folder Premissions
-### We have created a Finance_Group, which is a security group inside the Finance OU, we will use this to configure permissions to the folders only available to the users inside this group:
+### Shared Folder Premissions
+#### Finance Security Group
+Created a Finance_Group security group to manage access permissions for department-specific shared resources.
+
 <img width="450" height="300" alt="image" src="https://github.com/user-attachments/assets/7bce3314-bce5-46cc-a618-af6519cbc32f" />
 
-### We will now add the Finance_Group to the Share premissions of the file "FinanceShare", which was created in This PC -> Finance -> FinanceShare:
+#### Share & NTFS Permissions
+Configured both Share and NTFS permissions on the FinanceShare folder to implement role-based access control.
+
+
+#### Share Permissions
 <img width="350" height="550" alt="image" src="https://github.com/user-attachments/assets/e5bce811-e079-4a0c-8c17-6cf184552158" />
 
-### We will also add Finance_Group to the NTFS Permissions:
+#### NTFS Permissions
 <img width="375" height="500" alt="image" src="https://github.com/user-attachments/assets/351af12c-b05b-4287-a7bc-43bfd8505b46" />
 
-### Note: Both permissions will always pick the least privilege, if NTFS has Read and Share has Full Control, it will automatically configure to Read
+#### Permission Model
+The effective permissions applied to users are determined by the most restrictive combination between Share permissions and NTFS permissions.
 
-### We will now check access to the folder on the Omar.Phil account using our client account:
+#### Access Verification
+Verified successful access to the shared folder using a user account that was a member of Finance_Group.
+
+#### Finance User Access
 <img width="450" height="275" alt="image" src="https://github.com/user-attachments/assets/492e7c9f-a568-41bb-b067-4dd454150b78" />
 
-### We successfully gained premission:
+#### Successful Folder Access
 <img width="500" height="275" alt="image" src="https://github.com/user-attachments/assets/9e835ce9-df21-49ef-9107-946b143b1c0f" />
 
-### We will also map the folder by right clicking this PC -> Map Network Drive:
+#### Mapped Network Drive
+Mapped the FinanceShare network folder to a drive letter on the client workstation.
+
 <img width="650" height="475" alt="image" src="https://github.com/user-attachments/assets/f038244e-07b8-4cb2-b6d3-3f596549b6d3" />
 <img width="375" height="120" alt="image" src="https://github.com/user-attachments/assets/2cfb17f3-6f26-4363-9979-59e94915ae6b" />
 
-### If we tried to access the folder using a different account, we are hit with this error:
+#### Unauthorized Access Testing
+Verified that users outside of Finance_Group were denied access to the shared resource.
+
 <img width="600" height="475" alt="image" src="https://github.com/user-attachments/assets/87ae02fa-776a-47a6-ba83-97f7c85c513d" />
 
 
-## Troubleshooting
+### Troubleshooting
 
-During the lab, I ran into DHCP and APIPA issues where the Windows 10 client was not receiving an address from the DHCP scope. I resolved this by reviewing the VirtualBox network adapters, DHCP scope configuration, and server bindings. I also verified DNS resolution and domain connectivity before joining the client to the domain.
+During the deployment process, several networking and domain connectivity issues were encountered and resolved, including:
 
-## Skills Demonstrated
+APIPA address assignment caused by DHCP configuration issues
+DHCP binding and scope verification
+DNS resolution issues preventing domain joins
+VirtualBox internal networking configuration problems
+Domain authentication troubleshooting
 
-- Active Directory Domain Services
-- DNS and DHCP configuration
-- RRAS/NAT routing
-- Windows Server administration
-- Domain joining Windows clients
-- Organizational Units and security groups
-- PowerShell user provisioning
-- Delegation of Control
-- Group Policy Objects
-- Password and account lockout policies
-- NTFS and share permissions
-- Network troubleshooting
+Troubleshooting steps included:
+
+Verifying DHCP scope assignments
+Reviewing server bindings and adapter configurations
+Testing connectivity with ping and nslookup
+Confirming DNS server assignments
+Validating domain communication between the server and client
+
+### Skills Demonstrated
+
+Active Directory Domain Services (AD DS)
+DNS and DHCP configuration
+RRAS/NAT routing
+Windows Server administration
+Domain joining Windows clients
+Organizational Units (OUs)
+PowerShell user provisioning
+Delegation of Control
+Group Policy Objects (GPOs)
+Password complexity and account lockout policies
+NTFS and Share permissions
+Role-Based Access Control (RBAC)
+Remote Desktop Protocol (RDP)
+Network troubleshooting
+VirtualBox virtualization
 
 
 
