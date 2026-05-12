@@ -4,6 +4,16 @@ This project documents the setup of a Windows Server 2019 Active Directory lab i
 ## Network Topology
 <img width="676" height="530" alt="Active Directory Topology" src="https://github.com/user-attachments/assets/d0c41d97-ce43-4431-a5ef-1276e00b4dd8" />
 
+## Project Objectives
+
+- Deploy a Windows Server 2019 Active Directory environment
+- Configure DNS, DHCP, and RRAS/NAT services
+- Join Windows 10 clients to the domain
+- Implement Organizational Units and Group Policy Objects
+- Configure delegated administration and RDP access
+- Apply password policies and account lockout policies
+- Configure NTFS/share permissions and mapped network drives
+
 ## Lab Environment
 
 - Hypervisor: VirtualBox
