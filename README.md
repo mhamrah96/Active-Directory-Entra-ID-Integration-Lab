@@ -47,12 +47,12 @@ Double checking client join through AD UC Computers:
 <img width="833" height="709" alt="image" src="https://github.com/user-attachments/assets/6366ed5a-e399-45b3-9a28-731523c29847" />
 
 
-## Active Directory Administration
+# Active Directory Administration
 
-# Created four Organizational Units (IT, Marketing, Management, Finance):
+## Created four Organizational Units (IT, Marketing, Management, Finance):
 <img width="383" height="489" alt="image" src="https://github.com/user-attachments/assets/3ceee93d-2caf-4b26-97c1-84efb4a32e96" />
 
-# Powershell user creation automation:
+## Powershell user creation automation:
 Created department-based OUs and used PowerShell to automate the creation of 10 domain users.
 <img width="927" height="639" alt="image" src="https://github.com/user-attachments/assets/6acd4a98-85d0-4e95-9e82-01ad48467da8" />
 
