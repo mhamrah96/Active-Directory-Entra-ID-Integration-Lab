@@ -236,19 +236,19 @@ Verified that users outside of Finance_Group were denied access to the shared re
 
 During the deployment process, several networking and domain connectivity issues were encountered and resolved, including:
 
-APIPA address assignment caused by DHCP configuration issues
-DHCP binding and scope verification
-DNS resolution issues preventing domain joins
-VirtualBox internal networking configuration problems
-Domain authentication troubleshooting
+- APIPA address assignment caused by DHCP configuration issues
+- DHCP binding and scope verification
+- DNS resolution issues preventing domain joins
+- VirtualBox internal networking configuration problems
+- Domain authentication troubleshooting
 
 Troubleshooting steps included:
 
-Verifying DHCP scope assignments
-Reviewing server bindings and adapter configurations
-Testing connectivity with ping and nslookup
-Confirming DNS server assignments
-Validating domain communication between the server and client
+- Verifying DHCP scope assignments
+- Reviewing server bindings and adapter configurations
+- Testing connectivity with ping and nslookup
+- Confirming DNS server assignments
+- Validating domain communication between the server and client
 
 ### Skills Demonstrated
 
