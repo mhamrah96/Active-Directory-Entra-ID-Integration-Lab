@@ -41,50 +41,50 @@ Two network adapters were configured on the Windows Server 2019 virtual machine:
 - Internal adapter for domain communication between the server and client systems
 
 #### Internet Adapter (NAT)
-<img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/62ed928a-70a6-47bb-8cda-8591688c5d24" />
+<img src="screenshots/NAT_Adapter.png" width="450">
 
 #### Internal Adapter
-<img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/70f22a4c-2c40-496e-9a25-813e28c8d6c6" />
+<img src="screenshots/Internal_Adapter.png" width="450">
 
 ### Static Internal IP Configuration
 A static internal IP address was configured on the Domain Controller to ensure reliable DNS and DHCP functionality throughout the environment.
 
-<img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/718eff9d-e2f5-4365-9017-34650d533bda" />
+<img src="screenshots/Static_IP.png" width="350">
 
 ### Active Directory Domain Services (AD DS)
 Installed the Active Directory Domain Services role using Server Manager and promoted the server to a Domain Controller for the domain:
 
 #### AD DS Installation
-<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/fb4d2ce3-b8f2-419b-8452-9a70931a8c30" />
+<img src="screenshots/AD-DS-Installation.png" width="450">
 
 #### Promoting the Server to Domain Controller
-<img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/f575380d-55f7-459b-a3b8-3f16f157170c" />
+<img src="screenshots/Server-Promotion.png" width="450">
 
 ### RRAS / NAT Configuration
 Configured RRAS (Routing and Remote Access Services) with NAT to allow internal domain clients to access the internet through the Domain Controller.
 
-<img width="500" height="425" alt="image" src="https://github.com/user-attachments/assets/0ec6c6d6-0283-4a08-8a09-2655b3a9b4a2" />
+<img src="screenshots/RRAS.png" width="350">
 
 
 ### DHCP Configuration
 Configured DHCP services to dynamically assign IP addresses to domain clients on the internal 172.16.0.0/24 network.
 
 #### DHCP Scope Configuration
-<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/6e6fa761-9854-413f-8a1a-360ed7b6e892" />
+<img src="screenshots/DHCP-Scope.png" width="350">
 
 #### Verifying DHCP Address Assignment
-<img width="550" height="400" alt="image" src="https://github.com/user-attachments/assets/fdeb985c-415f-488d-a83f-74f1364b5aaf" />
+<img src="screenshots/DHCP-Verification.png" width="450">
 
 #### DHCP Address Lease Verification
-<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/f6e09f8b-848e-4b0c-bb35-d018d3a4067d" />
+<img src="screenshots/DHCP-Lease.png" width="450">
 
 ### Domain Join
 Joined the Windows 10 client workstation to the Active Directory domain.
 
-<img width="500" height="450" alt="image" src="https://github.com/user-attachments/assets/e7fd7ae4-5362-49a1-85af-21652599c9b4" />
+<img src="screenshots/Domain-join.png" width="450">
 
 ### Verifying Domain Join Through ADUC
-<img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/49648d9b-bf10-4c36-ae52-47a3fb7a5409" />
+<img src="screenshots/Domain-Join-Verification.png" width="450">
 
 
 
@@ -100,13 +100,13 @@ Departments created:
 - Management
 - Finance
 
-<img width="200" height="300" alt="image" src="https://github.com/user-attachments/assets/3ceee93d-2caf-4b26-97c1-84efb4a32e96" />
+<img src="screenshots/OU's.png" width="350">
 
 ### PowerShell User Provisioning
 Used PowerShell automation to bulk-create domain users and improve administrative efficiency.
 
 ### PowerShell User Creation Script
-<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/6acd4a98-85d0-4e95-9e82-01ad48467da8" />
+<img src="screenshots/Powershell-User-Creation.png" width="450">
 
 #### The following PowerShell script was used to automate bulk Active Directory user creation and provisioning:
 ```powershell
@@ -121,91 +121,91 @@ $users = @(
 
 
 ### Verifying User Creation in ADUC
-<img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/92f75aec-052d-4f77-89fb-5b4833c25313" />\
+<img src="screenshots/Verifying-User-Creation.png" width="450">
 
 
 ## Delegated Administration & Remote Desktop
 ### Delegation of Control
 Delegated password reset permissions to a designated IT user account within the IT Organizational Unit.
 
-<img width="500" height="450" alt="image" src="https://github.com/user-attachments/assets/c46c42e0-9b11-4310-b726-061b82e80c62" />
+<img src="screenshots/Implementing-Delegation.png" width="450">
 
 ### Remote Desktop Configuration
 Enabled Remote Desktop access on the server and created an RDP-specific security group to control remote administrative access.
 
 #### Enabling Remote Desktop
-<img width="375" height="420" alt="image" src="https://github.com/user-attachments/assets/6fb792b0-12af-46ee-bd69-945f2536bd77" />
+<img src="screenshots/Enable-RDP.png" width="450">
 
 #### RDP Security Group Configuration
-<img width="500" height="350" alt="image" src="https://github.com/user-attachments/assets/a7a4fe7a-c88a-4fd8-a9e0-609925205eee" />
+<img src="screenshots/RDP-Users.png" width="450">
 
 #### RDP Access Configuration Command
-<img width="800" height="100" alt="image" src="https://github.com/user-attachments/assets/d65b5baf-e5fe-4e5d-aad8-7f03e9863f8e" />
+<img src="screenshots/RDP-Access-Prompt.png" width="450">
 
 #### Logging into the Server via RDP
-<img width="375" height="425" alt="image" src="https://github.com/user-attachments/assets/249952f7-f14d-46e9-9726-00ba64bc7ea2" />
+<img src="screenshots/RDP-Login.png" width="450">
 
 ### Password Reset Verification
 Verified delegated administrative permissions by resetting a user password through PowerShell while logged into the delegated account.
 
 #### PowerShell Password Reset
-<img width="600" height="250" alt="image" src="https://github.com/user-attachments/assets/7e61d480-4a92-4df1-855e-9bbe85f12a53" />
+<img src="screenshots/Password-reset.png" width="450">
 
 #### Successful Login After Password Reset
-<img width="550" height="350" alt="image" src="https://github.com/user-attachments/assets/494efd7b-4db2-48bd-a0cd-daf8460fa915" />
+<img src="screenshots/login-after-reset.png" width="450">
 
 ### Group Policy
 #### Control Panel Restriction Policy
 Configured a Group Policy Object to restrict Control Panel access for users in the Marketing, Management, and Finance Organizational Units while allowing access for the IT department.
 
 #### GPO Configuration
-<img width="400" height="200" alt="image" src="https://github.com/user-attachments/assets/b3eb23ed-90f0-43ac-bf84-bac4c495ee67" />
-<img width="650" height="400" alt="image" src="https://github.com/user-attachments/assets/b64f98b0-eb42-46f4-9990-9aa4f3e52605" />
+<img src="screenshots/GPO.png" width="450">
+<img src="screenshots/Control-Panel.png" width="450">
 
 #### Linked Organizational Units
-<img width="650" height="275" alt="image" src="https://github.com/user-attachments/assets/bde5a13b-ce11-4bd9-9e34-d6a8c97ffd84" />
+<img src="screenshots/Linked-OUs.png" width="450">
 
 #### Verifying Policy Enforcement
-<img width="650" height="400" alt="image" src="https://github.com/user-attachments/assets/a5638887-345d-4d6b-9666-0af5a5869738" />
+<img src="screenshots/Policy-Verification.png" width="450">
 
 ### Password Policy & Lockout
 #### Password Complexity Policy
 Configured domain-wide password policies through Group Policy Management to enforce stronger authentication controls.
 
 #### Password Policy Configuration
-<img width="600" height="275" alt="image" src="https://github.com/user-attachments/assets/fa872477-4d93-4bf7-a01a-d610e3c39cb3" />
-<img width="600" height="200" alt="image" src="https://github.com/user-attachments/assets/49b35c68-8649-4ece-8b4d-383073f316e9" />
+<img src="screenshots/Password-Policy.png" width="450">
+<img src="screenshots/Password-Lockout.png" width="450">
 
 #### Updating Group Policy
-<img width="450" height="100" alt="image" src="https://github.com/user-attachments/assets/4215d280-1a1e-4cfa-830f-a52bd0c0c67a" />
+<img src="screenshots/gpupdate.png" width="450">
 
 #### Password Complexity Enforcement
-<img width="450" height="275" alt="image" src="https://github.com/user-attachments/assets/17d74423-f6ba-4880-be1c-6407ca11c80a" />
+<img src="screenshots/complexity-verify.png" width="450">
 
 #### Account Lockout Policy
 Configured an account lockout threshold that disabled accounts after three failed login attempts.
 
 #### Account Lockout Verification
-<img width="450" height="450" alt="image" src="https://github.com/user-attachments/assets/e2cb03ec-9676-40a8-861a-0927cc577fd6" />
+<img src="screenshots/lockout-verify.png" width="450">
 
 #### Locked Account Confirmation in ADUC
-<img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/bb181603-a470-4800-ad3f-c6d22af8ef02" />
+<img src="screenshots/aduc-lockout.png" width="450">
 
 ### Shared Folder Permissions
 #### Finance Security Group
 Created a Finance_Group security group to manage access permissions for department-specific shared resources.
 
-<img width="450" height="300" alt="image" src="https://github.com/user-attachments/assets/7bce3314-bce5-46cc-a618-af6519cbc32f" />
+<img src="screenshots/finance-group.png" width="450">
 
 #### Share & NTFS Permissions
 Configured both Share and NTFS permissions on the FinanceShare folder to implement role-based access control.
 
 
 #### Share Permissions
-<img width="350" height="550" alt="image" src="https://github.com/user-attachments/assets/e5bce811-e079-4a0c-8c17-6cf184552158" />
+<img src="screenshots/shareperms.png" width="450">
 
 #### NTFS Permissions
-<img width="375" height="500" alt="image" src="https://github.com/user-attachments/assets/351af12c-b05b-4287-a7bc-43bfd8505b46" />
+<img src="screenshots/NTFSperms.png" width="450">
 
 #### Permission Model
 The effective permissions applied to users are determined by the most restrictive combination between Share permissions and NTFS permissions.
@@ -217,18 +217,18 @@ Verified successful access to the shared folder using a user account that was a 
 <img width="450" height="275" alt="image" src="https://github.com/user-attachments/assets/492e7c9f-a568-41bb-b067-4dd454150b78" />
 
 #### Successful Folder Access
-<img width="500" height="275" alt="image" src="https://github.com/user-attachments/assets/9e835ce9-df21-49ef-9107-946b143b1c0f" />
+<img src="screenshots/financeshare-access.png" width="450">
 
 #### Mapped Network Drive
 Mapped the FinanceShare network folder to a drive letter on the client workstation.
 
-<img width="650" height="475" alt="image" src="https://github.com/user-attachments/assets/f038244e-07b8-4cb2-b6d3-3f596549b6d3" />
-<img width="375" height="120" alt="image" src="https://github.com/user-attachments/assets/2cfb17f3-6f26-4363-9979-59e94915ae6b" />
+<img src="screenshots/map-drive.png" width="450">
+<img src="screenshots/map-network-drive.png" width="450">
 
 #### Unauthorized Access Testing
 Verified that users outside of Finance_Group were denied access to the shared resource.
 
-<img width="600" height="475" alt="image" src="https://github.com/user-attachments/assets/87ae02fa-776a-47a6-ba83-97f7c85c513d" />
+<img src="screenshots/denied-access.png" width="450">
 
 
 ### Troubleshooting
