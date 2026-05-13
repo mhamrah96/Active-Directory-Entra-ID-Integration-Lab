@@ -1,5 +1,6 @@
 ![Windows Server](https://img.shields.io/badge/Windows_Server-2019-blue)
-![Active Directory](https://img.shields.io/badge/Active_Directory-Lab-green)
+![Windows 10](https://img.shields.io/badge/Windows_10-Client-blue)
+![Active Directory](https://img.shields.io/badge/Active_Directory-Environment-green)
 ![PowerShell](https://img.shields.io/badge/PowerShell-Automation-blue)
 
 # Active Directory Infrastructure & PowerShell Administration Lab
