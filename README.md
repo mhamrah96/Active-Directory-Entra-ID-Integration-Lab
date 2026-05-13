@@ -3,8 +3,31 @@
 ![Active Directory](https://img.shields.io/badge/Active_Directory-Environment-green)
 ![PowerShell](https://img.shields.io/badge/PowerShell-Automation-blue)
 
+
+
 # Active Directory Infrastructure & PowerShell Administration Lab
 This project documents the setup of a Windows Server 2019 Active Directory lab in VirtualBox. The environment includes a domain controller, DNS, DHCP, RRAS/NAT, a domain-joined Windows 10 client, Group Policy, delegated administration, PowerShell user provisioning, and shared folder permissions.
+
+## Key Skills Demonstrated
+
+- Active Directory Domain Services (AD DS)
+- Windows Server 2019 Administration
+- DNS and DHCP Configuration
+- RRAS/NAT Routing
+- Windows 10 Domain Joining
+- Organizational Unit (OU) Management
+- Group Policy Object (GPO) Administration
+- PowerShell Automation and User Provisioning
+- Delegation of Control
+- Remote Desktop Protocol (RDP) Configuration
+- Password Complexity and Account Lockout Policies
+- NTFS and Share Permissions
+- Role-Based Access Control (RBAC)
+- Security Group Administration
+- Mapped Network Drive Configuration
+- Troubleshooting DHCP, DNS, and APIPA Issues
+- VirtualBox Network Configuration
+- Basic Enterprise Network Architecture
 
 ## Network Topology
 <img src="screenshots/topology.png" width="700">
@@ -250,26 +273,6 @@ Troubleshooting steps included:
 - Confirming DNS server assignments
 - Validating domain communication between the server and client
 
-### Skills Demonstrated
-
-- Active Directory Domain Services (AD DS)
-- Windows Server 2019 Administration
-- DNS and DHCP Configuration
-- RRAS/NAT Routing
-- Windows 10 Domain Joining
-- Organizational Unit (OU) Management
-- Group Policy Object (GPO) Administration
-- PowerShell Automation and User Provisioning
-- Delegation of Control
-- Remote Desktop Protocol (RDP) Configuration
-- Password Complexity and Account Lockout Policies
-- NTFS and Share Permissions
-- Role-Based Access Control (RBAC)
-- Security Group Administration
-- Mapped Network Drive Configuration
-- Troubleshooting DHCP, DNS, and APIPA Issues
-- VirtualBox Network Configuration
-- Basic Enterprise Network Architecture
 
 
 
