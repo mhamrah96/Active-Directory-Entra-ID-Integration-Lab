@@ -276,11 +276,13 @@ Troubleshooting steps included:
 
 
 
+
 # Hybrid Identity Extension: Microsoft Entra ID Integration
 ### After successfully deploying and configuring the on-premises Active Directory environment, the project was extended by integrating Active Directory Domain Services with Microsoft Entra ID using Microsoft Entra Connect Sync. This allowed domain users and groups to be synchronized to the cloud, creating a hybrid identity environment commonly used in modern enterprise networks.
 
 #### Downloading Microsoft Entra Connect
 Microsoft Entra Connect was downloaded from Microsoft's official download center. This tool enables synchronization between on-premises Active Directory and Microsoft Entra ID.
+
 <img src="screenshots/Entra Download.png" width="450">
 
 #### Microsoft Entra Connect Sync
@@ -318,6 +320,12 @@ An IT Department group was created within Microsoft Entra ID to organize adminis
 
 <img src="screenshots/Creating IT group.png" width="450">
 
+
+# Conclusion
+
+### This project demonstrates the deployment and administration of a complete Active Directory environment using Windows Server 2019 and Windows 10. Infrastructure services including DNS, DHCP, RRAS/NAT, Group Policy, delegated administration, PowerShell automation, and role-based access controls were successfully implemented and tested.
+
+### The environment was further enhanced through integration with Microsoft Entra ID, allowing Active Directory identities to synchronize with the cloud. This hybrid identity configuration demonstrates both traditional on-premises administration skills and modern cloud identity management practices used in enterprise environments.
 
 
 
