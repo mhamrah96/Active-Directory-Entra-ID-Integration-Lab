@@ -30,7 +30,7 @@ This project documents the setup of a Windows Server 2019 Active Directory lab i
 - Basic Enterprise Network Architecture
 
 ## Network Topology
-<img src="screenshots/topology.png" width="700">
+<img src="screenshots/AD_Entra_Topology.png" width="700">
 
 ## Architecture Overview
 
